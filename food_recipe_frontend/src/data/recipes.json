@@ -1,0 +1,60 @@
+[
+  {
+    "id": "1",
+    "title": "Creamy Garlic Chicken",
+    "category": "Dinner",
+    "image": "https://images.unsplash.com/photo-1604908554075-0e6c704b3a3a?q=80&w=1200&auto=format&fit=crop",
+    "time": 35,
+    "servings": 4,
+    "ingredients": ["Chicken breasts", "Garlic", "Heavy cream", "Butter", "Parmesan", "Parsley", "Salt", "Pepper"],
+    "instructions": [
+      "Season chicken with salt and pepper and sear in butter until golden.",
+      "Add minced garlic and cook until fragrant.",
+      "Pour in cream and simmer until slightly thickened.",
+      "Stir in parmesan, adjust seasoning, and garnish with parsley."
+    ]
+  },
+  {
+    "id": "2",
+    "title": "Avocado Toast Deluxe",
+    "category": "Breakfast",
+    "image": "https://images.unsplash.com/photo-1525351484163-7529414344d8?q=80&w=1200&auto=format&fit=crop",
+    "time": 10,
+    "servings": 2,
+    "ingredients": ["Sourdough bread", "Avocado", "Cherry tomatoes", "Lemon", "Chili flakes", "Olive oil", "Salt"],
+    "instructions": [
+      "Toast sourdough slices.",
+      "Mash avocado with lemon juice and salt.",
+      "Spread on toast; top with tomatoes, chili flakes, and olive oil."
+    ]
+  },
+  {
+    "id": "3",
+    "title": "Mediterranean Quinoa Salad",
+    "category": "Lunch",
+    "image": "https://images.unsplash.com/photo-1540420773420-3366772f4999?q=80&w=1200&auto=format&fit=crop",
+    "time": 20,
+    "servings": 3,
+    "ingredients": ["Quinoa", "Cucumber", "Tomatoes", "Olives", "Feta", "Red onion", "Olive oil", "Lemon", "Oregano", "Salt", "Pepper"],
+    "instructions": [
+      "Cook quinoa and let cool.",
+      "Chop vegetables and mix with quinoa.",
+      "Dress with olive oil, lemon juice, oregano, salt, and pepper.",
+      "Crumble feta on top and serve."
+    ]
+  },
+  {
+    "id": "4",
+    "title": "Chocolate Chip Cookies",
+    "category": "Dessert",
+    "image": "https://images.unsplash.com/photo-1499636136210-6f4ee915583e?q=80&w=1200&auto=format&fit=crop",
+    "time": 25,
+    "servings": 24,
+    "ingredients": ["Flour", "Butter", "Sugar", "Brown sugar", "Eggs", "Vanilla", "Baking soda", "Salt", "Chocolate chips"],
+    "instructions": [
+      "Cream butter and sugars, then beat in eggs and vanilla.",
+      "Mix in dry ingredients and fold in chocolate chips.",
+      "Scoop onto baking sheet and bake at 350°F (175°C) for 10–12 minutes."
+    ]
+  }
+]

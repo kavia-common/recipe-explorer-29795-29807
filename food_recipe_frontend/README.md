@@ -1,82 +1,77 @@
-# Lightweight React Template for KAVIA
+# Recipe Explorer Frontend (Ocean Professional)
 
-This project provides a minimal React template with a clean, modern UI and minimal dependencies.
+A modern React UI to browse, search, and view recipe details. Uses an Ocean Professional theme with blue and amber accents, subtle gradients, rounded corners, and smooth interactions.
 
 ## Features
+- Header with app title and a search bar (searches by title and ingredients)
+- Category sidebar with clickable filters
+- Responsive grid of recipe cards (image, title, category, time, servings)
+- Click a card to open an accessible details modal (ingredients + instructions)
+- Mock data by default; can switch to a backend API when available
+- Accessible basics: semantic markup, alt text, keyboard navigation, focus-trapped modal, ESC/backdrop close
 
-- **Lightweight**: No heavy UI frameworks - uses only vanilla CSS and React
-- **Modern UI**: Clean, responsive design with KAVIA brand styling
-- **Fast**: Minimal dependencies for quick loading times
-- **Simple**: Easy to understand and modify
+## Run locally
+1. Install dependencies:
+   npm install
+2. Start the development server (port 3000):
+   npm start
+3. Open http://localhost:3000
 
-## Getting Started
+## Theming (Ocean Professional)
+- Primary: #2563EB
+- Secondary/Success: #F59E0B
+- Error: #EF4444
+- Background: #f9fafb
+- Surface: #ffffff
+- Text: #111827
 
-In the project directory, you can run:
+Additional subtle gradient and shadows are used throughout for a polished, modern look.
 
-### `npm start`
+## Data: Mock vs API
+By default, the app reads from local mock data at src/data/recipes.json.
 
-Runs the app in development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+To switch to an API later:
+1. Copy .env.example to .env
+2. Set REACT_APP_API_BASE_URL to your backend base URL (e.g., https://api.example.com)
+3. Restart the dev server:
+   npm start
 
-### `npm test`
+The app will fetch GET {REACT_APP_API_BASE_URL}/recipes and expects an array of recipes:
+[
+  {
+    "id": "1",
+    "title": "Name",
+    "category": "Dinner",
+    "image": "https://...",
+    "time": 30,
+    "servings": 4,
+    "ingredients": ["..."],
+    "instructions": ["..."]
+  }
+]
 
-Launches the test runner in interactive watch mode.
+## Project Structure
+- src/App.js — Main layout, state, and routing for modal
+- src/styles.css — Global styles and theme tokens
+- src/components/
+  - Header.jsx — Brand + Search
+  - Sidebar.jsx — Category filters
+  - RecipeGrid.jsx — Grid container
+  - RecipeCard.jsx — Card component
+  - RecipeDetail.jsx — Accessible modal
+- src/data/recipes.json — Mock data
+- src/services/recipeService.js — Fetches mock or API data depending on REACT_APP_API_BASE_URL
 
-### `npm run build`
+## Accessibility
+- Semantic elements: header, main, aside, section, article
+- Images have descriptive alt text
+- Cards are keyboard-activatable (Enter/Space)
+- Modal:
+  - Uses role="dialog" with aria-modal
+  - Closes with ESC
+  - Focus is trapped while open and returned to the trigger on close
+  - Backdrop click closes modal
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-## Customization
-
-### Colors
-
-The main brand colors are defined as CSS variables in `src/App.css`:
-
-```css
-:root {
-  --kavia-orange: #E87A41;
-  --kavia-dark: #1A1A1A;
-  --text-color: #ffffff;
-  --text-secondary: rgba(255, 255, 255, 0.7);
-  --border-color: rgba(255, 255, 255, 0.1);
-}
-```
-
-### Components
-
-This template uses pure HTML/CSS components instead of a UI framework. You can find component styles in `src/App.css`. 
-
-Common components include:
-- Buttons (`.btn`, `.btn-large`)
-- Container (`.container`)
-- Navigation (`.navbar`)
-- Typography (`.title`, `.subtitle`, `.description`)
-
-## Learn More
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Notes
+- No external state library used; React state + memoization
+- No extra UI libraries; pure CSS for a lightweight bundle
